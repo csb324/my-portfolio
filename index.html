@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="clara">
+  <head>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/css/foundation.min.css">
+    <title>Clara Beyer: Web Developer</title>
+  </head>
+
+  <body ng-controller="DirectoryController as directory">
+    <div class="row" ng-controller="ClickController as click">
+
+      <p>hello</p>
+
+      <div ng-repeat="site in directory.links">
+        <div ng-show="click.equals(site.id)">
+          <h3>{{site.name}}</h3>
+          <p>{{site.description}}</p>
+        </div>
+      </div>
+
+      <div class="small-3 large-2 columns end" ng-repeat="site in directory.links">
+        <img ng-click="click.setClick(site.id)" ng-src={{site.images[0]}} alt={{site.name}} />
+      </div>
+
+    </div>
+
+  </body>
+</html>
