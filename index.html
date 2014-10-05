@@ -8,19 +8,21 @@
   </head>
 
   <body ng-controller="DirectoryController as directory">
-    <div class="row" ng-controller="ClickController as click">
+    <div class="row">
 
       <p>hello</p>
-
+      <div ng-hide="directory.checkId(undefined)">
+        <button ng-click="directory.setId(undefined)">close</button>
+      </div>
       <div ng-repeat="site in directory.links">
-        <div ng-show="click.equals(site.id)">
+        <div ng-show="directory.checkId(site.id)">
           <h3>{{site.name}}</h3>
           <p>{{site.description}}</p>
         </div>
       </div>
 
       <div class="small-3 large-2 columns end" ng-repeat="site in directory.links">
-        <img ng-click="click.setClick(site.id)" ng-src={{site.images[0]}} alt={{site.name}} />
+        <img ng-click="directory.setId(site.id)" ng-src={{site.images[0]}} alt={{site.name}} />
       </div>
 
     </div>

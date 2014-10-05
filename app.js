@@ -1,26 +1,23 @@
 (function() {
   // everything goes in here
-
   var app = angular.module('clara', []);
 
   app.controller('DirectoryController', function() {
     this.links = sites;
-  });
 
-  app.controller('ClickController', function() {
-    this.clicked = 0;
-
-    this.equals = function(testId) {
+    this.clicked = undefined;
+    this.checkId = function(testId) {
       value = (this.clicked === testId);
       console.log("CHECKING?" + value);
       console.log(this.clicked);
       return value;
     };
 
-    this.setClick = function(newId) {
+    this.setId = function(newId) {
       console.log("setting " + newId);
       this.clicked = newId;
     };
+
   });
 
   var sites = [{
