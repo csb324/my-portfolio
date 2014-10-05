@@ -9,22 +9,35 @@
 
   <body ng-controller="DirectoryController as directory">
     <div class="row">
+      <!-- header / info -->
+      <p>the impressive works of</p>
+      <h1>Clara Beyer</h1>
+    </div>
 
-      <p>hello</p>
-      <div ng-hide="directory.checkId(undefined)">
-        <button ng-click="directory.setId(undefined)">close</button>
-      </div>
+    <div class="row" id="projects">
+      <!-- projects/works/etc -->
+
       <div ng-repeat="site in directory.links">
         <div ng-show="directory.checkId(site.id)">
-          <h3>{{site.name}}</h3>
+          <h3><a href={{site.url}}>{{site.name}}</a></h3>
           <p>{{site.description}}</p>
+          <p ng-click="directory.setId(undefined)">close</p>
         </div>
       </div>
 
-      <div class="small-3 large-2 columns end" ng-repeat="site in directory.links">
+      <!-- the grid -->
+      <div class="small-3 medium-2 columns end" ng-repeat="site in directory.links">
         <img ng-click="directory.setId(site.id)" ng-src={{site.images[0]}} alt={{site.name}} />
       </div>
 
+    </div>
+
+    <div class="row">
+      <!-- education / history -->
+    </div>
+
+    <div class="row">
+      <!-- contact info -->
     </div>
 
   </body>

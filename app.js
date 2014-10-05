@@ -42,7 +42,7 @@
     description: 'App that matches you with potential dates based on shared taste in music. Project 2 for WDI',
     date: 'July 2014',
     press: [],
-    images: [],
+    images: ["images/justduet.png"],
     url: 'http://just-duet.herokuapp.com'
   }, {
     id: 3,
